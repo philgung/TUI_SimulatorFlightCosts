@@ -15,6 +15,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Application", "Application"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{C15C637B-4505-4DA7-AFB0-331196226EA1}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TUI.SimulatorFlights.Domain", "Domain\TUI.SimulatorFlights.Domain\TUI.SimulatorFlights.Domain.csproj", "{A5C23E5C-1B61-4EA7-989A-C830B517241B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "Presentation", "{CE75832B-6812-448D-ABD3-1279C87CB386}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,9 +37,16 @@ Global
 		{F0344C9C-F513-49F8-B5CB-A4C1BD057B52}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F0344C9C-F513-49F8-B5CB-A4C1BD057B52}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F0344C9C-F513-49F8-B5CB-A4C1BD057B52}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A5C23E5C-1B61-4EA7-989A-C830B517241B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A5C23E5C-1B61-4EA7-989A-C830B517241B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A5C23E5C-1B61-4EA7-989A-C830B517241B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A5C23E5C-1B61-4EA7-989A-C830B517241B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{A5C23E5C-1B61-4EA7-989A-C830B517241B} = {CEE2E6F5-C33D-4573-AD74-970462073B63}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {1B8BB358-FCE1-4371-9811-FEB24B16B15F}
