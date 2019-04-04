@@ -3,9 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28307.329
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TUI_SimulatorFlightCostsTests", "TUI_SimulatorFlightCostsTests\TUI_SimulatorFlightCostsTests.csproj", "{0397CB7C-55AB-42D8-8DAB-EF1211AC8903}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TUI_SimulatorFlightCostsTests", "TUI_SimulatorFlightCostsTests\TUI_SimulatorFlightCostsTests.csproj", "{0397CB7C-55AB-42D8-8DAB-EF1211AC8903}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TUI_ConsoleTests", "TUI_ConsoleTests\TUI_ConsoleTests.csproj", "{D100AD6E-B772-4DB2-A7DD-C3FA7C20B210}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TUI_ConsoleTests", "TUI_ConsoleTests\TUI_ConsoleTests.csproj", "{D100AD6E-B772-4DB2-A7DD-C3FA7C20B210}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TUI_SimulatorFlightCosts_AcceptanceTests", "TUI_SimulatorFlightCosts_AcceptanceTests\TUI_SimulatorFlightCosts_AcceptanceTests.csproj", "{2B54441B-E8A5-439F-9682-271819ADDE17}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{D100AD6E-B772-4DB2-A7DD-C3FA7C20B210}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D100AD6E-B772-4DB2-A7DD-C3FA7C20B210}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D100AD6E-B772-4DB2-A7DD-C3FA7C20B210}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2B54441B-E8A5-439F-9682-271819ADDE17}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2B54441B-E8A5-439F-9682-271819ADDE17}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2B54441B-E8A5-439F-9682-271819ADDE17}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2B54441B-E8A5-439F-9682-271819ADDE17}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
