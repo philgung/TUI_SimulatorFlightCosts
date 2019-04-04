@@ -19,12 +19,21 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Calculate_flight_distance_and_fuel_needed.feature</DependentUpon>
     </Compile>
+    <Compile Update="Register_a_new_flight.feature.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Register_a_new_flight.feature</DependentUpon>
+    </Compile>
   </ItemGroup>
 
   <ItemGroup>
     <None Update="Calculate_flight_distance_and_fuel_needed.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>Calculate_flight_distance_and_fuel_needed.feature.cs</LastGenOutput>
+    </None>
+    <None Update="Register_a_new_flight.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>Register_a_new_flight.feature.cs</LastGenOutput>
     </None>
   </ItemGroup>
 
