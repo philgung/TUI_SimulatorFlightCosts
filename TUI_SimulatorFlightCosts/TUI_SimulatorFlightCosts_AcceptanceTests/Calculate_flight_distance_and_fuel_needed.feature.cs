@@ -75,29 +75,58 @@ namespace TUI_SimulatorFlightCosts_AcceptanceTests
         
         [Xunit.FactAttribute()]
         [Xunit.TraitAttribute("FeatureTitle", "Calculate_flight_distance_and_fuel_needed")]
-        [Xunit.TraitAttribute("Description", "Determine distance and fuel consumption between airport London and airport Roissy" +
-            " Charles De Gaulles")]
-        public virtual void DetermineDistanceAndFuelConsumptionBetweenAirportLondonAndAirportRoissyCharlesDeGaulles()
+        [Xunit.TraitAttribute("Description", "Determine distance between airport London and airport Roissy Charles De Gaulles")]
+        public virtual void DetermineDistanceBetweenAirportLondonAndAirportRoissyCharlesDeGaulles()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Determine distance and fuel consumption between airport London and airport Roissy" +
-                    " Charles De Gaulles", "");
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Determine distance between airport London and airport Roissy Charles De Gaulles", "");
 #line 3
 this.ScenarioSetup(scenarioInfo);
 #line 4
  testRunner.Given("A flight which has a departure airport with GPS Position (London - 51.5048, 0.052" +
                     "745500000014545)", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 5
- testRunner.And("has a destination airport with GPS Position (Roissy Charlles De Gaulle - 49.007, " +
-                    "2.559790000000021)", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("has a destination airport with GPS Position (Roissy Charles De Gaulle - 49.007, 2" +
+                    ".559790000000021)", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 6
  testRunner.And("the aircraft fuel consumption per distance/flight time (10000 L/km/h) + takeoff e" +
                     "ffort (10000 L/km/h)", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 7
- testRunner.When("the flight takes place", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.And("is registered in control tower like \'Roissy Charles De Gaulle - London\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 8
- testRunner.Then("the travel distance was 340 km", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.When("the simulator calculate travel distance for the flight \'Roissy Charles De Gaulle " +
+                    "- London\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 9
- testRunner.And("the total fuel consumption was 70000 L", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.Then("the travel distance was 340 km", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [Xunit.FactAttribute()]
+        [Xunit.TraitAttribute("FeatureTitle", "Calculate_flight_distance_and_fuel_needed")]
+        [Xunit.TraitAttribute("Description", "Determine fuel consumption between airport London and airport Roissy Charles De G" +
+            "aulles")]
+        public virtual void DetermineFuelConsumptionBetweenAirportLondonAndAirportRoissyCharlesDeGaulles()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Determine fuel consumption between airport London and airport Roissy Charles De G" +
+                    "aulles", "");
+#line 11
+this.ScenarioSetup(scenarioInfo);
+#line 12
+ testRunner.Given("A flight which has a departure airport with GPS Position (London - 51.5048, 0.052" +
+                    "745500000014545)", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 13
+ testRunner.And("has a destination airport with GPS Position (Roissy Charles De Gaulle - 49.007, 2" +
+                    ".559790000000021)", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 14
+ testRunner.And("the aircraft fuel consumption per distance/flight time (10000 L/km/h) + takeoff e" +
+                    "ffort (10000 L/km/h)", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 15
+ testRunner.And("is registered in control tower like \'Roissy Charles De Gaulle - London\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 16
+ testRunner.When("the simulator calculate the fuel consumption for the flight \'Roissy Charles De Ga" +
+                    "ulle - London\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 17
+ testRunner.Then("the total fuel consumption was 70000 L", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

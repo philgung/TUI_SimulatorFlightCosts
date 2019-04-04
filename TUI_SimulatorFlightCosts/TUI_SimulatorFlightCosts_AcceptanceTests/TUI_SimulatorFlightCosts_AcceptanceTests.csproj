@@ -14,6 +14,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Domain\TUI.SimulatorFlights.Domain\TUI.SimulatorFlights.Domain.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Compile Update="Calculate_flight_distance_and_fuel_needed.feature.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>

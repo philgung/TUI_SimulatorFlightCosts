@@ -1,4 +1,6 @@
-﻿namespace TUI.Domain.SimulatorFlights
+﻿using System;
+
+namespace TUI.Domain.SimulatorFlights
 {
     public class Flight
     {
@@ -8,5 +10,30 @@
         }
 
         public string Name { get; }
+
+        public void RegisterDepartureAirport(string airportName, decimal latitude, decimal longitude)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void RegisterDestinationAirport(string airportName, decimal latitude, decimal longitude)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void SetFuelConsumptionPerDistancePerFlightTime(int fuelConsumptionPerDistancePerFlightTime)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void SetFuelConsumptionTakeoffEffort(int fuelConsumptionTakeoffEffort)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Rename(string flightName)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
