@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FluentAssertions;
+using System;
 using TechTalk.SpecFlow;
 using TUI.Domain.SimulatorFlights;
 
@@ -9,6 +10,8 @@ namespace TUI_SimulatorFlightCosts_AcceptanceTests
     {
         private Flight _currentFlight = new Flight("currentFlight");
         private ControlTower _currentControlTower = new ControlTower();
+        private double _distanceKm, _fuelConsumption;
+
 
         [Given(@"A flight which has a departure airport with GPS Position \((.*) - (.*), (.*)\)")]
         public void GivenAFlightWhichHasADepartureAirportWithGPSPositionLondon_(string airportName, Decimal latitude, Decimal longitude)
@@ -41,27 +44,27 @@ namespace TUI_SimulatorFlightCosts_AcceptanceTests
         public void WhenTheFlightTakesPlace(string flightName)
         {
             var flight = _currentControlTower.GetFlight(flightName);
-            _currentControlTower.CalculateDistance(flight);
+            _distanceKm = _currentControlTower.CalculateDistance(flight);
         }
 
         [When(@"the simulator calculate the fuel consumption for the flight '(.*)'")]
         public void WhenTheFuelConsumptionSimulatorCalculate(string flightName)
         {
             var flight = _currentControlTower.GetFlight(flightName);
-            _currentControlTower.CalculateFuelConsumption(flight);
+            _fuelConsumption = _currentControlTower.CalculateFuelConsumption(flight);
         }
 
 
         [Then(@"the travel distance was (.*) km")]
         public void ThenTheTravelDistanceWasKm(int distanceExpected)
         {
-            ScenarioContext.Current.Pending();
+            _distanceKm.Should().Be(distanceExpected);
         }
         
         [Then(@"the total fuel consumption was (.*) L")]
         public void ThenTheTotalFuelConsumptionWasL(int fuelConsumptionExpected)
         {
-            ScenarioContext.Current.Pending();
+            _fuelConsumption.Should().Be(fuelConsumptionExpected);
         }
     }
 }

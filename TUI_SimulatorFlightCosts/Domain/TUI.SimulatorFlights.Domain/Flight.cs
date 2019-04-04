@@ -2,38 +2,53 @@
 
 namespace TUI.Domain.SimulatorFlights
 {
-    public class Flight
+    public class Flight : IFlight
     {
+        private Airport _departureAirport;
+        private Airport _destinationAirport;
+        private int _fuelConsumptionPerDistancePerFlightTime;
+        private int _fuelConsumptionTakeoffEffort;
+
+        public string Name { get; private set; }
+
         public Flight(string flightName)
         {
             this.Name = flightName;
         }
 
-        public string Name { get; }
+        public double CalculateDistance()
+        {
+            throw new NotImplementedException();
+        }
+
+        public double CalculateFuelConsumption()
+        {
+            throw new NotImplementedException();
+        }       
 
         public void RegisterDepartureAirport(string airportName, decimal latitude, decimal longitude)
         {
-            throw new NotImplementedException();
+            _departureAirport = new Airport(airportName, new GPSPosition(latitude, longitude));
         }
 
         public void RegisterDestinationAirport(string airportName, decimal latitude, decimal longitude)
         {
-            throw new NotImplementedException();
+            _destinationAirport = new Airport(airportName, new GPSPosition(latitude, longitude));
         }
 
         public void SetFuelConsumptionPerDistancePerFlightTime(int fuelConsumptionPerDistancePerFlightTime)
         {
-            throw new NotImplementedException();
+            _fuelConsumptionPerDistancePerFlightTime = fuelConsumptionPerDistancePerFlightTime;
         }
 
         public void SetFuelConsumptionTakeoffEffort(int fuelConsumptionTakeoffEffort)
         {
-            throw new NotImplementedException();
+            _fuelConsumptionTakeoffEffort = fuelConsumptionTakeoffEffort;
         }
 
         public void Rename(string flightName)
         {
-            throw new NotImplementedException();
+            Name = flightName;
         }
     }
 }

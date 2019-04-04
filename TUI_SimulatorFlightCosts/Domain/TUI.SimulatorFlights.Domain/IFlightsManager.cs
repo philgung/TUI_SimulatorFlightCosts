@@ -4,8 +4,8 @@ namespace TUI.SimulatorFlights.Domain
 {
     public interface IFlightsManager
     {
-        void RegisterFlight(Flight flight);
+        void RegisterFlight(IFlight flight);
 
-        Flight GetFlight(string flightName);
+        IFlight GetFlight(string flightName);
     }
 }

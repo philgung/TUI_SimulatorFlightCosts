@@ -5,7 +5,7 @@ using Xunit;
 
 namespace TUI_SimulatorFlightCostsTests
 {
-    public class FlightsManagerTests
+    public class ControlTowerTests
     {
         [Fact]
         public void RegisterFlightAndRetriveIt()

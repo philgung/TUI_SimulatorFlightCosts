@@ -7,24 +7,24 @@ namespace TUI.Domain.SimulatorFlights
 {
     public class ControlTower : IFlightsManager, IFlightsSimulator
     {
-        private readonly IList<Flight> _flights = new List<Flight>();
+        private readonly IList<IFlight> _flights = new List<IFlight>();
 
-        public double CalculateDistance(Flight flight)
+        public double CalculateDistance(IFlight flight)
         {
-            throw new NotImplementedException();
+            return flight.CalculateDistance();
         }
 
-        public double CalculateFuelConsumption(Flight flight)
+        public double CalculateFuelConsumption(IFlight flight)
         {
-            throw new NotImplementedException();
+            return flight.CalculateFuelConsumption();
         }
 
-        public Flight GetFlight(string flightName)
+        public IFlight GetFlight(string flightName)
         {
             return _flights.SingleOrDefault(x => x.Name == flightName);
         }
 
-        public void RegisterFlight(Flight flight)
+        public void RegisterFlight(IFlight flight)
         {
             _flights.Add(flight);
         }
