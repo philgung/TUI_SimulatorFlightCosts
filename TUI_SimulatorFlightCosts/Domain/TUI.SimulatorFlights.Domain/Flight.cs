@@ -1,10 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace TUI.Domain.SimulatorFlights
+﻿namespace TUI.Domain.SimulatorFlights
 {
     public class Flight
     {
+        public Flight(string flightName)
+        {
+            this.Name = flightName;
+        }
+
+        public string Name { get; }
     }
 }
