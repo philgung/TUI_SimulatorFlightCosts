@@ -1,18 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace TUI.Domain.SimulatorFlights
+﻿namespace TUI.Domain.SimulatorFlights
 {
-    class Airport
+    public class Airport
     {
         private string airportName;
-        private GPSPosition gPSPosition;
+        public GPSPosition GPSPosition { get; }
 
         public Airport(string airportName, GPSPosition gPSPosition)
         {
             this.airportName = airportName;
-            this.gPSPosition = gPSPosition;
+            this.GPSPosition = gPSPosition;
         }
     }
 }

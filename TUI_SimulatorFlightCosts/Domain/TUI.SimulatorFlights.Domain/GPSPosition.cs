@@ -1,14 +1,14 @@
 ﻿namespace TUI.Domain.SimulatorFlights
 {
-    internal struct GPSPosition
+    public struct GPSPosition
     {
-        private decimal latitude;
-        private decimal longitude;
+        public double Latitude { get; }
+        public double Longitude { get; }
 
-        public GPSPosition(decimal latitude, decimal longitude)
+        public GPSPosition(double latitude, double longitude)
         {
-            this.latitude = latitude;
-            this.longitude = longitude;
+            this.Latitude = latitude;
+            this.Longitude = longitude;
         }
     }
 }

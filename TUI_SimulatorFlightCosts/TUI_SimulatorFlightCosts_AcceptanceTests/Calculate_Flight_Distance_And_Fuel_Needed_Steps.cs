@@ -15,29 +15,23 @@ namespace TUI_SimulatorFlightCosts_AcceptanceTests
 
 
         [Given(@"A flight which has a departure airport with GPS Position \((.*) - (.*), (.*)\)")]
-        public void GivenAFlightWhichHasADepartureAirportWithGPSPositionLondon_(string airportName, Decimal latitude, Decimal longitude)
+        public void GivenAFlightWhichHasADepartureAirportWithGPSPositionLondon_(string airportName, double latitude, double longitude)
         {
             _currentFlight.RegisterDepartureAirport(airportName, latitude, longitude);
         }        
         
         [Given(@"has a destination airport with GPS Position \((.*) - (.*), (.*)\)")]
-        public void GivenHasADestinationAirportWithGPSPosition(string airportName, Decimal latitude, Decimal longitude)
+        public void GivenHasADestinationAirportWithGPSPosition(string airportName, double latitude, double longitude)
         {
             _currentFlight.RegisterDestinationAirport(airportName, latitude, longitude);
         }
         
-        [Given(@"the aircraft fuel consumption per distance/flight time \((.*) L/km/h\) \+ takeoff effort \((.*) L\)")]
+        [Given(@"the aircraft fuel consumption per distance/flight time \((.*) L/km\) \+ takeoff effort \((.*) L\)")]
         public void GivenTheAircraftFuelConsumptionPerDistanceFlightTimeLKmHTakeoffEffortLKmH(int fuelConsumptionPerDistancePerFlightTime, int fuelConsumptionTakeoffEffort)
         {
             _currentFlight.SetFuelConsumptionPerDistancePerFlightTime(fuelConsumptionPerDistancePerFlightTime);
             _currentFlight.SetFuelConsumptionTakeoffEffort(fuelConsumptionTakeoffEffort);
-        }
-
-        [Given(@"the aircraft has an average speed (.*) km/h")]
-        public void GivenTheAircraftHasAnAverageSpeedKmH(int averageSpeedAircraft)
-        {
-            _currentFlight.SetAverageSpeedAircraft(averageSpeedAircraft);
-        }
+        }       
 
         [Given(@"is registered in control tower like '(.*)'")]
         public void GivenIsRegisteredInControlTowerLike(string flightName)

@@ -1,4 +1,4 @@
-﻿using System;
+﻿using TUI.SimulatorFlights.Domain.Extensions;
 
 namespace TUI.Domain.SimulatorFlights
 {
@@ -8,7 +8,6 @@ namespace TUI.Domain.SimulatorFlights
         private Airport _destinationAirport;
         private int _fuelConsumptionPerDistancePerFlightTime;
         private int _fuelConsumptionTakeoffEffort;
-        private int _averageSpeedAircraft;
 
         public string Name { get; private set; }
 
@@ -19,20 +18,20 @@ namespace TUI.Domain.SimulatorFlights
 
         public double CalculateDistance()
         {
-            throw new NotImplementedException();
+            return _departureAirport.GetDistanceTo(_destinationAirport);
         }
 
         public double CalculateFuelConsumption()
         {
-            throw new NotImplementedException();
-        }       
+            return (CalculateDistance() * _fuelConsumptionPerDistancePerFlightTime) + _fuelConsumptionTakeoffEffort;
+        }
 
-        public void RegisterDepartureAirport(string airportName, decimal latitude, decimal longitude)
+        public void RegisterDepartureAirport(string airportName, double latitude, double longitude)
         {
             _departureAirport = new Airport(airportName, new GPSPosition(latitude, longitude));
         }
 
-        public void RegisterDestinationAirport(string airportName, decimal latitude, decimal longitude)
+        public void RegisterDestinationAirport(string airportName, double latitude, double longitude)
         {
             _destinationAirport = new Airport(airportName, new GPSPosition(latitude, longitude));
         }
@@ -50,11 +49,6 @@ namespace TUI.Domain.SimulatorFlights
         public void Rename(string flightName)
         {
             Name = flightName;
-        }
-
-        public void SetAverageSpeedAircraft(int averageSpeedAircraft)
-        {
-            _averageSpeedAircraft = averageSpeedAircraft;
         }
     }
 }
