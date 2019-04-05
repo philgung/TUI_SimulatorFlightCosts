@@ -15,7 +15,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Domain\TUI.SimulatorFlights.Domain\TUI.SimulatorFlights.Domain.csproj" />
+    <ProjectReference Include="..\..\TUI.SimulatorFlights.Domain\TUI.SimulatorFlights.Domain.csproj" />    
   </ItemGroup>
 
 </Project>

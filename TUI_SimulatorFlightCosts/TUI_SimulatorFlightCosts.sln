@@ -3,8 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28307.329
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TUI_SimulatorFlightCostsTests", "TUI_SimulatorFlightCostsTests\TUI_SimulatorFlightCostsTests.csproj", "{0397CB7C-55AB-42D8-8DAB-EF1211AC8903}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TUI_SimulatorFlightCosts_AcceptanceTests", "TUI_SimulatorFlightCosts_AcceptanceTests\TUI_SimulatorFlightCosts_AcceptanceTests.csproj", "{2B54441B-E8A5-439F-9682-271819ADDE17}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TUI_GeoCoordinateTests", "TUI_GeoCoordinateTests\TUI_GeoCoordinateTests.csproj", "{F0344C9C-F513-49F8-B5CB-A4C1BD057B52}"
@@ -21,16 +19,16 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "Presentatio
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TUI.SimulatorFlights.Infrastructure", "Infrastructure\TUI.SimulatorFlights.Infrastructure\TUI.SimulatorFlights.Infrastructure.csproj", "{B232552B-E8FB-4024-B64C-A4185110D63B}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{98AAF169-ED56-4435-95FC-2B1BC83638DC}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TUI_SimulatorFlights.Domain.Tests", "Domain\Tests\TUI_SimulatorFlightsDomainTests\TUI_SimulatorFlights.Domain.Tests.csproj", "{4E03E53A-AE34-47B2-82AD-D5F1E2C92393}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{0397CB7C-55AB-42D8-8DAB-EF1211AC8903}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{0397CB7C-55AB-42D8-8DAB-EF1211AC8903}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{0397CB7C-55AB-42D8-8DAB-EF1211AC8903}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{0397CB7C-55AB-42D8-8DAB-EF1211AC8903}.Release|Any CPU.Build.0 = Release|Any CPU
 		{2B54441B-E8A5-439F-9682-271819ADDE17}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{2B54441B-E8A5-439F-9682-271819ADDE17}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2B54441B-E8A5-439F-9682-271819ADDE17}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -47,6 +45,10 @@ Global
 		{B232552B-E8FB-4024-B64C-A4185110D63B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B232552B-E8FB-4024-B64C-A4185110D63B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B232552B-E8FB-4024-B64C-A4185110D63B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4E03E53A-AE34-47B2-82AD-D5F1E2C92393}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4E03E53A-AE34-47B2-82AD-D5F1E2C92393}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4E03E53A-AE34-47B2-82AD-D5F1E2C92393}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4E03E53A-AE34-47B2-82AD-D5F1E2C92393}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -54,6 +56,8 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{A5C23E5C-1B61-4EA7-989A-C830B517241B} = {CEE2E6F5-C33D-4573-AD74-970462073B63}
 		{B232552B-E8FB-4024-B64C-A4185110D63B} = {C15C637B-4505-4DA7-AFB0-331196226EA1}
+		{98AAF169-ED56-4435-95FC-2B1BC83638DC} = {CEE2E6F5-C33D-4573-AD74-970462073B63}
+		{4E03E53A-AE34-47B2-82AD-D5F1E2C92393} = {98AAF169-ED56-4435-95FC-2B1BC83638DC}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {1B8BB358-FCE1-4371-9811-FEB24B16B15F}
