@@ -5,8 +5,6 @@ VisualStudioVersion = 15.0.28307.329
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TUI_SimulatorFlightCosts_AcceptanceTests", "TUI_SimulatorFlightCosts_AcceptanceTests\TUI_SimulatorFlightCosts_AcceptanceTests.csproj", "{2B54441B-E8A5-439F-9682-271819ADDE17}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TUI_GeoCoordinateTests", "TUI_GeoCoordinateTests\TUI_GeoCoordinateTests.csproj", "{F0344C9C-F513-49F8-B5CB-A4C1BD057B52}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Domain", "Domain", "{CEE2E6F5-C33D-4573-AD74-970462073B63}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Application", "Application", "{9196233E-3ECE-42BC-928C-A003FA76E266}"
@@ -25,6 +23,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TUI_SimulatorFlights.Domain
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TUI.SimulatorFlights.InitDBSqlite", "Presentation\TUI.SimulatorFlights.InitDBSqlite\TUI.SimulatorFlights.InitDBSqlite.csproj", "{4FB1B011-3EE1-4337-A364-ED517D35E211}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TUI_GeoCoordinateTests", "Domain\Tests\TUI_GeoCoordinateTests\TUI_GeoCoordinateTests.csproj", "{6252CB74-716F-4440-8127-EF0AEF5E6C3A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -35,10 +35,6 @@ Global
 		{2B54441B-E8A5-439F-9682-271819ADDE17}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2B54441B-E8A5-439F-9682-271819ADDE17}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2B54441B-E8A5-439F-9682-271819ADDE17}.Release|Any CPU.Build.0 = Release|Any CPU
-		{F0344C9C-F513-49F8-B5CB-A4C1BD057B52}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{F0344C9C-F513-49F8-B5CB-A4C1BD057B52}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{F0344C9C-F513-49F8-B5CB-A4C1BD057B52}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{F0344C9C-F513-49F8-B5CB-A4C1BD057B52}.Release|Any CPU.Build.0 = Release|Any CPU
 		{A5C23E5C-1B61-4EA7-989A-C830B517241B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{A5C23E5C-1B61-4EA7-989A-C830B517241B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A5C23E5C-1B61-4EA7-989A-C830B517241B}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -55,6 +51,10 @@ Global
 		{4FB1B011-3EE1-4337-A364-ED517D35E211}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4FB1B011-3EE1-4337-A364-ED517D35E211}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4FB1B011-3EE1-4337-A364-ED517D35E211}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6252CB74-716F-4440-8127-EF0AEF5E6C3A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6252CB74-716F-4440-8127-EF0AEF5E6C3A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6252CB74-716F-4440-8127-EF0AEF5E6C3A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6252CB74-716F-4440-8127-EF0AEF5E6C3A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -65,6 +65,7 @@ Global
 		{98AAF169-ED56-4435-95FC-2B1BC83638DC} = {CEE2E6F5-C33D-4573-AD74-970462073B63}
 		{4E03E53A-AE34-47B2-82AD-D5F1E2C92393} = {98AAF169-ED56-4435-95FC-2B1BC83638DC}
 		{4FB1B011-3EE1-4337-A364-ED517D35E211} = {CE75832B-6812-448D-ABD3-1279C87CB386}
+		{6252CB74-716F-4440-8127-EF0AEF5E6C3A} = {98AAF169-ED56-4435-95FC-2B1BC83638DC}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {1B8BB358-FCE1-4371-9811-FEB24B16B15F}
