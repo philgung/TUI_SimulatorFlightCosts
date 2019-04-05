@@ -4,12 +4,12 @@ namespace TUI.Domain.SimulatorFlights
 {
     public class Flight : IFlight
     {
-        private Airport _departureAirport;
-        private Airport _destinationAirport;
-        private int _fuelConsumptionPerDistancePerFlightTime;
-        private int _fuelConsumptionTakeoffEffort;
+        public Airport DepartureAirport { get; private set; }
+        public Airport DestinationAirport { get; private set; }
 
         public string Name { get; private set; }
+        public int FuelConsumptionPerDistance { get; private set; }
+        public int FuelConsumptionTakeoffEffort { get; private set; }
 
         public Flight(string flightName)
         {
@@ -18,32 +18,32 @@ namespace TUI.Domain.SimulatorFlights
 
         public double CalculateDistance()
         {
-            return _departureAirport.GetDistanceTo(_destinationAirport);
+            return DepartureAirport.GetDistanceTo(DestinationAirport);
         }
 
         public double CalculateFuelConsumption()
         {
-            return (CalculateDistance() * _fuelConsumptionPerDistancePerFlightTime) + _fuelConsumptionTakeoffEffort;
+            return (CalculateDistance() * FuelConsumptionPerDistance) + FuelConsumptionTakeoffEffort;
         }
 
         public void RegisterDepartureAirport(string airportName, double latitude, double longitude)
         {
-            _departureAirport = new Airport(airportName, new GPSPosition(latitude, longitude));
+            DepartureAirport = new Airport(airportName, new GPSPosition(latitude, longitude));
         }
 
         public void RegisterDestinationAirport(string airportName, double latitude, double longitude)
         {
-            _destinationAirport = new Airport(airportName, new GPSPosition(latitude, longitude));
+            DestinationAirport = new Airport(airportName, new GPSPosition(latitude, longitude));
         }
 
-        public void SetFuelConsumptionPerDistancePerFlightTime(int fuelConsumptionPerDistancePerFlightTime)
+        public void SetFuelConsumptionPerDistance(int fuelConsumptionPerDistance)
         {
-            _fuelConsumptionPerDistancePerFlightTime = fuelConsumptionPerDistancePerFlightTime;
+            FuelConsumptionPerDistance = fuelConsumptionPerDistance;
         }
 
         public void SetFuelConsumptionTakeoffEffort(int fuelConsumptionTakeoffEffort)
         {
-            _fuelConsumptionTakeoffEffort = fuelConsumptionTakeoffEffort;
+            FuelConsumptionTakeoffEffort = fuelConsumptionTakeoffEffort;
         }
 
         public void Rename(string flightName)

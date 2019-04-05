@@ -29,7 +29,7 @@ namespace TUI_SimulatorFlightCosts_AcceptanceTests
         [Given(@"the aircraft fuel consumption per distance/flight time \((.*) L/km\) \+ takeoff effort \((.*) L\)")]
         public void GivenTheAircraftFuelConsumptionPerDistanceFlightTimeLKmHTakeoffEffortLKmH(int fuelConsumptionPerDistancePerFlightTime, int fuelConsumptionTakeoffEffort)
         {
-            _currentFlight.SetFuelConsumptionPerDistancePerFlightTime(fuelConsumptionPerDistancePerFlightTime);
+            _currentFlight.SetFuelConsumptionPerDistance(fuelConsumptionPerDistancePerFlightTime);
             _currentFlight.SetFuelConsumptionTakeoffEffort(fuelConsumptionTakeoffEffort);
         }       
 
