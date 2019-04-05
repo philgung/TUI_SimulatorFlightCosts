@@ -2,6 +2,7 @@
 using System;
 using TechTalk.SpecFlow;
 using TUI.Domain.SimulatorFlights;
+using TUI.SimulatorFlights.Infrastructure;
 
 namespace TUI_SimulatorFlightCosts_AcceptanceTests
 {
@@ -9,7 +10,7 @@ namespace TUI_SimulatorFlightCosts_AcceptanceTests
     public class Calculate_Flight_Distance_And_Fuel_NeededSteps
     {
         private Flight _currentFlight = new Flight("currentFlight");
-        private ControlTower _currentControlTower = new ControlTower();
+        private ControlTower _currentControlTower = new ControlTower(new PersistenceService());
         private double _distanceKm, _fuelConsumption;
 
 

@@ -1,13 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using TUI.SimulatorFlights.Domain;
+﻿using TUI.SimulatorFlights.Domain;
 
 namespace TUI.Domain.SimulatorFlights
 {
     public class ControlTower : IFlightsManager, IFlightsSimulator
     {
-        private readonly IList<IFlight> _flights = new List<IFlight>();
+        private readonly IPersistenceService _persistenceService;
+
+        public ControlTower(IPersistenceService persistenceService)
+        {
+            _persistenceService = persistenceService;
+        }
 
         public double CalculateDistance(string flightName)
         {
@@ -23,12 +25,12 @@ namespace TUI.Domain.SimulatorFlights
 
         public IFlight GetFlight(string flightName)
         {
-            return _flights.SingleOrDefault(x => x.Name == flightName);
+            return _persistenceService.GetFlight(flightName);
         }
 
         public void RegisterFlight(IFlight flight)
         {
-            _flights.Add(flight);
+            _persistenceService.SaveFlight(flight);            
         }
     }
 }
