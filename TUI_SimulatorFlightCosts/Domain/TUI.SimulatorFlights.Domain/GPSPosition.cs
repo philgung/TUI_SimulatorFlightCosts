@@ -1,6 +1,6 @@
 ﻿namespace TUI.Domain.SimulatorFlights
 {
-    internal class GPSPosition
+    internal struct GPSPosition
     {
         private decimal latitude;
         private decimal longitude;

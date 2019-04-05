@@ -4,7 +4,7 @@ namespace TUI.SimulatorFlights.Domain
 {
     public interface IFlightsSimulator
     {
-        double CalculateDistance(IFlight flight);
-        double CalculateFuelConsumption(IFlight flight);
+        double CalculateDistance(string flightName);
+        double CalculateFuelConsumption(string flightName);
     }
 }

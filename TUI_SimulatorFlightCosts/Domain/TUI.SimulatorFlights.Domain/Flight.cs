@@ -8,6 +8,7 @@ namespace TUI.Domain.SimulatorFlights
         private Airport _destinationAirport;
         private int _fuelConsumptionPerDistancePerFlightTime;
         private int _fuelConsumptionTakeoffEffort;
+        private int _averageSpeedAircraft;
 
         public string Name { get; private set; }
 
@@ -49,6 +50,11 @@ namespace TUI.Domain.SimulatorFlights
         public void Rename(string flightName)
         {
             Name = flightName;
+        }
+
+        public void SetAverageSpeedAircraft(int averageSpeedAircraft)
+        {
+            _averageSpeedAircraft = averageSpeedAircraft;
         }
     }
 }

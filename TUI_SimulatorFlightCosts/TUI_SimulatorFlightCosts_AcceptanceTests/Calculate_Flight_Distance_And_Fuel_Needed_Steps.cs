@@ -25,11 +25,17 @@ namespace TUI_SimulatorFlightCosts_AcceptanceTests
             _currentFlight.RegisterDestinationAirport(airportName, latitude, longitude);
         }
         
-        [Given(@"the aircraft fuel consumption per distance/flight time \((.*) L/km/h\) \+ takeoff effort \((.*) L/km/h\)")]
+        [Given(@"the aircraft fuel consumption per distance/flight time \((.*) L/km/h\) \+ takeoff effort \((.*) L\)")]
         public void GivenTheAircraftFuelConsumptionPerDistanceFlightTimeLKmHTakeoffEffortLKmH(int fuelConsumptionPerDistancePerFlightTime, int fuelConsumptionTakeoffEffort)
         {
             _currentFlight.SetFuelConsumptionPerDistancePerFlightTime(fuelConsumptionPerDistancePerFlightTime);
             _currentFlight.SetFuelConsumptionTakeoffEffort(fuelConsumptionTakeoffEffort);
+        }
+
+        [Given(@"the aircraft has an average speed (.*) km/h")]
+        public void GivenTheAircraftHasAnAverageSpeedKmH(int averageSpeedAircraft)
+        {
+            _currentFlight.SetAverageSpeedAircraft(averageSpeedAircraft);
         }
 
         [Given(@"is registered in control tower like '(.*)'")]
@@ -43,15 +49,13 @@ namespace TUI_SimulatorFlightCosts_AcceptanceTests
         [When(@"the simulator calculate travel distance for the flight '(.*)'")]
         public void WhenTheFlightTakesPlace(string flightName)
         {
-            var flight = _currentControlTower.GetFlight(flightName);
-            _distanceKm = _currentControlTower.CalculateDistance(flight);
+            _distanceKm = _currentControlTower.CalculateDistance(flightName);
         }
 
         [When(@"the simulator calculate the fuel consumption for the flight '(.*)'")]
         public void WhenTheFuelConsumptionSimulatorCalculate(string flightName)
         {
-            var flight = _currentControlTower.GetFlight(flightName);
-            _fuelConsumption = _currentControlTower.CalculateFuelConsumption(flight);
+            _fuelConsumption = _currentControlTower.CalculateFuelConsumption(flightName);
         }
 
 

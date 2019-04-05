@@ -9,13 +9,15 @@ namespace TUI.Domain.SimulatorFlights
     {
         private readonly IList<IFlight> _flights = new List<IFlight>();
 
-        public double CalculateDistance(IFlight flight)
+        public double CalculateDistance(string flightName)
         {
+            var flight = GetFlight(flightName);
             return flight.CalculateDistance();
         }
 
-        public double CalculateFuelConsumption(IFlight flight)
+        public double CalculateFuelConsumption(string flightName)
         {
+            var flight = GetFlight(flightName);
             return flight.CalculateFuelConsumption();
         }
 
