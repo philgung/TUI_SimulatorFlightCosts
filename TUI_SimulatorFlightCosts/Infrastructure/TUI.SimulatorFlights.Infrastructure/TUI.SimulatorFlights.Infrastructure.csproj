@@ -5,6 +5,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="System.Data.SQLite.Core" Version="1.0.110" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\..\Domain\TUI.SimulatorFlights.Domain\TUI.SimulatorFlights.Domain.csproj" />
   </ItemGroup>
 

@@ -9,6 +9,6 @@
         double CalculateDistance();
         double CalculateFuelConsumption();
         void SetFuelConsumptionPerDistancePerFlightTime(int fuelConsumptionPerDistancePerFlightTime);
-        void SetFuelConsumptionTakeoffEffort(int fuelConsumptionTakeoffEffort);        
+        void SetFuelConsumptionTakeoffEffort(int fuelConsumptionTakeoffEffort);
     }
 }

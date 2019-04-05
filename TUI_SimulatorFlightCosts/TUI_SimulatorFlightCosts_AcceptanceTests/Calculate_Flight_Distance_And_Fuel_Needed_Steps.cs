@@ -10,7 +10,7 @@ namespace TUI_SimulatorFlightCosts_AcceptanceTests
     public class Calculate_Flight_Distance_And_Fuel_NeededSteps
     {
         private Flight _currentFlight = new Flight("currentFlight");
-        private ControlTower _currentControlTower = new ControlTower(new PersistenceService());
+        private ControlTower _currentControlTower = new ControlTower(new SQLLitePersistenceService());
         private double _distanceKm, _fuelConsumption;
 
 
