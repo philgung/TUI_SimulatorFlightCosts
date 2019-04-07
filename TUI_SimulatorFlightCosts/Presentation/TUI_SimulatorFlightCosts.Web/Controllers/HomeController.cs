@@ -1,9 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Configuration;
 using System.Diagnostics;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
 using TUI.SimulatorFlights.Domain;
 using TUI_SimulatorFlightCosts.Application;
 using TUI_SimulatorFlightCosts.Web.Models;
@@ -15,15 +12,16 @@ namespace TUI_SimulatorFlightCosts.Web.Controllers
     {
         private FlightSimulatorService _flightSimulatorService;
 
-        public HomeController(IPersistenceService persistenceService)
+        public HomeController(IPersistenceService persistenceService, IConfiguration configuration)
         {
+            persistenceService.InitializeService(ConfigurationExtensions.GetConnectionString(configuration, "DefaultConnection"));
             _flightSimulatorService = new FlightSimulatorService(persistenceService);
         }
         public IActionResult Index()
         {
             // Afficher les vols présents
             var flights = _flightSimulatorService.GetFlights();
-
+            
             return View(new HomeModel()
             {
                 Flights = flights

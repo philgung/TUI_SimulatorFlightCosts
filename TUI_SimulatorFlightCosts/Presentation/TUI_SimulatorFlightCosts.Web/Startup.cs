@@ -31,6 +31,7 @@ namespace TUI_SimulatorFlightCosts.Web
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
 
             services.AddTransient<IPersistenceService, SQLLitePersistenceService>();
+            services.AddTransient(s => Configuration);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

@@ -13,8 +13,10 @@ namespace TUI.SimulatorFlights.Infrastructure
     {
         private string _connectionString = @"Data Source=..\..\..\..\Sqlite\TUI.SimulatorFlights.sqlite;Version=3;";
 
+        
         public IFlight GetFlight(string flightName)
         {
+            
             using (var connection = new SQLiteConnection(_connectionString))
             using (var command = connection.CreateCommand())
             {
@@ -72,6 +74,11 @@ namespace TUI.SimulatorFlights.Infrastructure
                 var flightDTOs = connection.Query<FlightDTO>($"select * from flight");
                 return flightDTOs.Select(x => x.ToFlight()).ToList();
             }
+        }
+
+        public void InitializeService(string connectionString)
+        {
+            _connectionString = connectionString;
         }
     }
 }
