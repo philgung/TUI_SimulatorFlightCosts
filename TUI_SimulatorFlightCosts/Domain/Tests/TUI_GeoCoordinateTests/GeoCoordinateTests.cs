@@ -19,7 +19,7 @@ namespace TUI_GeoCoordinateTests
             var longitudeAirportLondon = 0.052745500000014545;
 
             var londonAirportGPSPosition = new GeoCoordinate(latitudeAirportLondon, longitudeAirportLondon);
-            var expectedDistance = 330.25267832631084;
+            var expectedDistance = 330.25267832631079;
             // Act
             var distanceKmCalculated = londonAirportGPSPosition.GetDistanceTo(roissyAirportGPSPosition) / 1000;
             // Assert

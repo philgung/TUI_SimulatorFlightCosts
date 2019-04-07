@@ -6,7 +6,7 @@ Scenario: Determine distance between airport London and airport Roissy Charles D
 	And the aircraft fuel consumption per distance/flight time (1000 L/km) + takeoff effort (2000 L)	
 	And is registered in control tower like 'Roissy Charles De Gaulle - London'
 	When the simulator calculate travel distance for the flight 'Roissy Charles De Gaulle - London'
-	Then the travel distance was 330.25267832631084 km
+	Then the travel distance was 173.66182990855378 km
 
 Scenario: Determine fuel consumption between airport London and airport Roissy Charles De Gaulles
 	Given A flight which has a departure airport with GPS Position (London - 51.5048, 0.052745500000014545)
@@ -14,4 +14,4 @@ Scenario: Determine fuel consumption between airport London and airport Roissy C
 	And the aircraft fuel consumption per distance/flight time (1000 L/km) + takeoff effort (2000 L)	
 	And is registered in control tower like 'Roissy Charles De Gaulle - London'
 	When the simulator calculate the fuel consumption for the flight 'Roissy Charles De Gaulle - London'
-	Then the total fuel consumption was 332252.67832631082 L
+	Then the total fuel consumption was 175661.82990855377 L

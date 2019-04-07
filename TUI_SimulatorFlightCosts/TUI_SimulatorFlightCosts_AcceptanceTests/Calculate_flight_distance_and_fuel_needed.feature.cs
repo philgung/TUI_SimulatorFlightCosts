@@ -96,7 +96,7 @@ this.ScenarioSetup(scenarioInfo);
  testRunner.When("the simulator calculate travel distance for the flight \'Roissy Charles De Gaulle " +
                     "- London\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 9
- testRunner.Then("the travel distance was 330.25267832631084 km", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("the travel distance was 173.66182990855378 km", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -126,7 +126,7 @@ this.ScenarioSetup(scenarioInfo);
  testRunner.When("the simulator calculate the fuel consumption for the flight \'Roissy Charles De Ga" +
                     "ulle - London\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 17
- testRunner.Then("the total fuel consumption was 332252.67832631082 L", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("the total fuel consumption was 175661.82990855377 L", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

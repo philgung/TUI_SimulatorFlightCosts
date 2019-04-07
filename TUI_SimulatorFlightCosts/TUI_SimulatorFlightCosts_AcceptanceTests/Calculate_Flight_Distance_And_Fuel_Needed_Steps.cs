@@ -55,13 +55,13 @@ namespace TUI_SimulatorFlightCosts_AcceptanceTests
 
 
         [Then(@"the travel distance was (.*) km")]
-        public void ThenTheTravelDistanceWasKm(int distanceExpected)
+        public void ThenTheTravelDistanceWasKm(double distanceExpected)
         {
             _distanceKm.Should().Be(distanceExpected);
         }
         
         [Then(@"the total fuel consumption was (.*) L")]
-        public void ThenTheTotalFuelConsumptionWasL(int fuelConsumptionExpected)
+        public void ThenTheTotalFuelConsumptionWasL(double fuelConsumptionExpected)
         {
             _fuelConsumption.Should().Be(fuelConsumptionExpected);
         }

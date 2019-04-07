@@ -18,7 +18,7 @@ namespace TUI_SimulatorFlightCostsTests
             // Act
             var distance = flight.CalculateDistance();
             // Assert
-            distance.Should().Be(330.25267832631084);
+            distance.Should().Be(330.25267832631079);
         }
 
         [Fact]
@@ -34,7 +34,7 @@ namespace TUI_SimulatorFlightCostsTests
             // Act
             var fuelConsumption = flight.CalculateFuelConsumption();
             // Assert
-            fuelConsumption.Should().Be(332252.67832631082);
+            fuelConsumption.Should().Be(332252.67832631076);
         }
     }
 }

@@ -1,6 +1,7 @@
 ﻿using Dapper;
 using System;
 using System.Data.SQLite;
+using System.Linq;
 using TUI.Domain.SimulatorFlights;
 using TUI.SimulatorFlights.Domain;
 using TUI.SimulatorFlights.Infrastructure.DTO;
@@ -16,12 +17,9 @@ namespace TUI.SimulatorFlights.Infrastructure
             using (var command = connection.CreateCommand())
             {
                 connection.Open();
-                var flightDTO = connection.Query<FlightDTO>($"select * from flight where flight_name='{flightName}'");
-                
-                
+                var flightDTO = connection.Query<FlightDTO>($"select * from flight where flight_name='{flightName}'").FirstOrDefault();
+                return flightDTO.ToFlight();
             }
-            
-            throw new NotImplementedException();
         }
 
         public void SaveFlight(IFlight flight)
