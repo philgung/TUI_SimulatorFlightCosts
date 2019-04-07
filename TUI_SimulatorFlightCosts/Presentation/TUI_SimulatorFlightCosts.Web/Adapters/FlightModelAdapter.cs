@@ -15,7 +15,7 @@ namespace TUI_SimulatorFlightCosts.Web.Adapters
             return flight;
         }
 
-        public static FlightModel ToFlightModel(this Flight flight)
+        public static FlightModel ToFlightModel(this IFlight flight)
         {
             return new FlightModel
             {

@@ -1,0 +1,64 @@
+﻿@model TUI_SimulatorFlightCosts.Web.Models.FlightModel
+
+<h4>FlightModel</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Name" class="control-label"></label>
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FuelConsumptionPerDistance" class="control-label"></label>
+                <input asp-for="FuelConsumptionPerDistance" class="form-control" />
+                <span asp-validation-for="FuelConsumptionPerDistance" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FuelConsumptionTakeoffEffort" class="control-label"></label>
+                <input asp-for="FuelConsumptionTakeoffEffort" class="form-control" />
+                <span asp-validation-for="FuelConsumptionTakeoffEffort" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DepartureAirportName" class="control-label"></label>
+                <input asp-for="DepartureAirportName" class="form-control" />
+                <span asp-validation-for="DepartureAirportName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DepartureAiportLatitude" class="control-label"></label>
+                <input asp-for="DepartureAiportLatitude" class="form-control" />
+                <span asp-validation-for="DepartureAiportLatitude" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DepartureAirportLongitude" class="control-label"></label>
+                <input asp-for="DepartureAirportLongitude" class="form-control" />
+                <span asp-validation-for="DepartureAirportLongitude" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DestinationAirportName" class="control-label"></label>
+                <input asp-for="DestinationAirportName" class="form-control" />
+                <span asp-validation-for="DestinationAirportName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DestinationAirportLatitude" class="control-label"></label>
+                <input asp-for="DestinationAirportLatitude" class="form-control" />
+                <span asp-validation-for="DestinationAirportLatitude" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DestinationAirportLongitude" class="control-label"></label>
+                <input asp-for="DestinationAirportLongitude" class="form-control" />
+                <span asp-validation-for="DestinationAirportLongitude" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+

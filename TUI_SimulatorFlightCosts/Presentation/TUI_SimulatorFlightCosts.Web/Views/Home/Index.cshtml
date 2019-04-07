@@ -3,10 +3,10 @@
 }
 @model UI_SimulatorFlightCosts.Web.Models.HomeModel
 
+@Html.ActionLink("Create flight", "Edit", "Home")
+@Html.ActionLink("View Reports summary","Reports", "Home")
 
-
-<div class="row">
-    <div class="col-md-3">
+<div>
         <h2>Flights TUI</h2>
         <table>
             <thead>
@@ -20,6 +20,7 @@
                     <th>Airport Destination</th>
                     <th>Latitude</th>
                     <th>Longitude</th>
+                    <th>Edit</th>
                 </tr>            
             </thead>
             @foreach (var flight in Model.Flights)
@@ -34,10 +35,9 @@
                 <td>Destination Airport Name</td>
                 <td>@flight.DestinationAirport.GPSPosition.Latitude</td>
                 <td>@flight.DestinationAirport.GPSPosition.Longitude</td>
+                <td>@Html.ActionLink("Edit", "Edit", "Home", new { flightName = flight.Name })</td>
             </tr>
             }
         </table>
-
         
-</div>    
 </div>

@@ -3,6 +3,7 @@ using Microsoft.Extensions.Configuration;
 using System.Diagnostics;
 using TUI.SimulatorFlights.Domain;
 using TUI_SimulatorFlightCosts.Application;
+using TUI_SimulatorFlightCosts.Web.Adapters;
 using TUI_SimulatorFlightCosts.Web.Models;
 using UI_SimulatorFlightCosts.Web.Models;
 
@@ -24,6 +25,25 @@ namespace TUI_SimulatorFlightCosts.Web.Controllers
             {
                 Flights = flights
             });
+        }
+
+        public IActionResult Edit(string flightName)
+        {
+            if (!string.IsNullOrEmpty(flightName))
+            {
+                var flight = _flightSimulatorService.GetFlight(flightName);
+                if (flight != null)
+                    return View(flight.ToFlightModel());
+            }
+           
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult Edit(FlightModel flightModel)
+        {
+            _flightSimulatorService.Save(flightModel.ToFlight());
+            return View();
         }
 
         public IActionResult Report()
