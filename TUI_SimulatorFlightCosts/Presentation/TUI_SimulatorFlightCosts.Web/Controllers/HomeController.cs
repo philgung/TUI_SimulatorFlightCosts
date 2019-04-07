@@ -19,9 +19,7 @@ namespace TUI_SimulatorFlightCosts.Web.Controllers
         }
         public IActionResult Index()
         {
-            // Afficher les vols présents
-            var flights = _flightSimulatorService.GetFlights();
-            
+            var flights = _flightSimulatorService.GetFlights();            
             return View(new HomeModel()
             {
                 Flights = flights
