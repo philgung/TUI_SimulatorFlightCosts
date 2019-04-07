@@ -1,14 +1,43 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
 }
+@model UI_SimulatorFlightCosts.Web.Models.HomeModel
+
 
 
 <div class="row">
     <div class="col-md-3">
         <h2>Flights TUI</h2>
-        <ul>
-            <li>Sample pages using ASP.NET Core MVC</li>
-            <li>Theming using <a href="https://go.microsoft.com/fwlink/?LinkID=398939">Bootstrap</a></li>
-        </ul>
-    </div>    
+        <table>
+            <thead>
+                <tr>
+                    <th>Flight Name</th>
+                    <th>Fuel Consumption per km</th>
+                    <th>Fuel Consumption at takeoff</th>
+                    <th>Airport Departure</th>
+                    <th>Latitude</th>
+                    <th>Longitude</th>
+                    <th>Airport Destination</th>
+                    <th>Latitude</th>
+                    <th>Longitude</th>
+                </tr>            
+            </thead>
+            @foreach (var flight in Model.Flights)
+            {
+            <tr>
+                <td>@flight.Name</td>
+                <td>@flight.FuelConsumptionPerDistance</td>
+                <td>@flight.FuelConsumptionTakeoffEffort</td>
+                <td>Departure Airport Name</td>
+                <td>@flight.DepartureAirport.GPSPosition.Latitude</td>
+                <td>@flight.DepartureAirport.GPSPosition.Longitude</td>
+                <td>Destination Airport Name</td>
+                <td>@flight.DestinationAirport.GPSPosition.Latitude</td>
+                <td>@flight.DestinationAirport.GPSPosition.Longitude</td>
+            </tr>
+            }
+        </table>
+
+        
+</div>    
 </div>

@@ -1,5 +1,6 @@
 ﻿using Dapper;
 using System;
+using System.Collections.Generic;
 using System.Data.SQLite;
 using System.Linq;
 using TUI.Domain.SimulatorFlights;
@@ -11,6 +12,7 @@ namespace TUI.SimulatorFlights.Infrastructure
     public class SQLLitePersistenceService : IPersistenceService
     {
         private string _connectionString = @"Data Source=..\..\..\..\Sqlite\TUI.SimulatorFlights.sqlite;Version=3;";
+
         public IFlight GetFlight(string flightName)
         {
             using (var connection = new SQLiteConnection(_connectionString))
@@ -58,6 +60,17 @@ namespace TUI.SimulatorFlights.Infrastructure
                     "destination_airport_longitude double)"
                     ;
                 command.ExecuteNonQuery();
+            }
+        }
+
+        public ICollection<IFlight> GetFlights()
+        {
+            using (var connection = new SQLiteConnection(_connectionString))
+            using (var command = connection.CreateCommand())
+            {
+                connection.Open();
+                var flightDTOs = connection.Query<FlightDTO>($"select * from flight");
+                return flightDTOs.Select(x => x.ToFlight()).ToList();
             }
         }
     }
