@@ -20,7 +20,10 @@ namespace TUI.Domain.SimulatorFlights
         public double CalculateFuelConsumption(string flightName)
         {
             var flight = GetFlight(flightName);
-            return flight.CalculateFuelConsumption();
+
+            var fuelConsumption = flight.CalculateFuelConsumption();
+            _persistenceService.SaveReport(flightName, CalculType.CalculateFuelConsumption, fuelConsumption);
+            return fuelConsumption;
         }
 
         public IFlight GetFlight(string flightName)

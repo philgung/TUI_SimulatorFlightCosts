@@ -62,6 +62,9 @@ namespace TUI.SimulatorFlights.Infrastructure
                     "destination_airport_longitude double)"
                     ;
                 command.ExecuteNonQuery();
+
+                command.CommandText = "CREATE TABLE report (flight_name VARCHAR(255), calculType VARCHAR(255), calculDate VARCHAR(255), result double)" ;
+                command.ExecuteNonQuery();
             }
         }
 
@@ -71,7 +74,7 @@ namespace TUI.SimulatorFlights.Infrastructure
             using (var command = connection.CreateCommand())
             {
                 connection.Open();
-                var flightDTOs = connection.Query<FlightDTO>($"select * from flight");
+                var flightDTOs = connection.Query<FlightDTO>("select * from flight");
                 return flightDTOs.Select(x => x.ToFlight()).ToList();
             }
         }
@@ -79,6 +82,29 @@ namespace TUI.SimulatorFlights.Infrastructure
         public void InitializeService(string connectionString)
         {
             _connectionString = connectionString;
+        }
+
+        public void SaveReport(string flightName, CalculType calculType, double result)
+        {
+            using (var connection = new SQLiteConnection(_connectionString))
+            using (var command = connection.CreateCommand())
+            {
+                connection.Open();
+                command.CommandText = "INSERT INTO report (flight_name, calculType, calculDate, result)" +
+                   $" VALUES ('{flightName}', '{calculType.ToString()}', '{DateTime.Now.ToShortDateString()}', {result})";
+                command.ExecuteNonQuery();
+            }
+        }
+
+        public ICollection<Report> GetReports()
+        {
+            using (var connection = new SQLiteConnection(_connectionString))
+            using (var command = connection.CreateCommand())
+            {
+                connection.Open();
+                var reportDTOs = connection.Query<ReportDTO>("select * from report");
+                return reportDTOs.Select(x => x.ToReport()).ToList();
+            }
         }
     }
 }

@@ -28,5 +28,10 @@ namespace TUI_SimulatorFlightCosts.Application
         {
             _persistenceService.SaveFlight(flight);
         }
+
+        public ICollection<Report> GetReports()
+        {
+            return _persistenceService.GetReports();
+        }
     }
 }

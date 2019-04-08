@@ -1,7 +1,30 @@
-﻿@{
-    ViewData["Title"] = "About";
+﻿@model IEnumerable<ReportModel>
+@{
+    ViewData["Title"] = "Flights Reports";
 }
-<h2>@ViewData["Title"]</h2>
-<h3>@ViewData["Message"]</h3>
 
-<p>Use this area to provide additional information.</p>
+<h2>Flights Reports</h2>
+
+
+
+<table style="padding:5px; border-spacing:5px; border-collapse:separate;">
+    <thead>
+        <tr>
+            <th>Flight Name</th>
+            <th>Type</th>
+            <th>Resultat</th>
+            <th>Date</th>            
+        </tr>
+    </thead>
+    @foreach (var report in Model)
+    {
+        <tr>
+            <td>@report.FlightName</td>
+            <td>@report.CalculType</td>
+            <td>@report.Result</td>
+            <td>@report.CalculDate</td>
+            
+        </tr>
+    }
+</table>
+

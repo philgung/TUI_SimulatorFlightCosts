@@ -21,8 +21,7 @@ namespace TUI_SimulatorFlightCosts.App.Tests
             _persistenceServiceMock = new Mock<IPersistenceService>();
             _flightSimulatorService = new FlightSimulatorService(_persistenceServiceMock.Object);
         }
-        // Feature : 
-        // Afficher un rapport avec les calculs
+        
         [Fact]
         public void GetFlights()
         {
@@ -55,6 +54,22 @@ namespace TUI_SimulatorFlightCosts.App.Tests
             _flightSimulatorService.Save(new Flight(_flightName));
             // Assert
             _persistenceServiceMock.Verify(x => x.SaveFlight(It.IsAny<IFlight>()), Times.Once);
+        }
+
+        [Fact]
+        public void GetReports()
+        {
+            // Arrange
+            _persistenceServiceMock.Setup(x => x.GetReports()).Returns(new List<Report> {
+                new Report { FlightName = "test", CalculType = CalculType.CalculateDistance, Result = 633.445, CalculDate = new DateTime(2019, 04, 08) },
+                new Report { FlightName = "test2", CalculType = CalculType.CalculateFuelConsumption, Result = 699.001, CalculDate = new DateTime(2019, 04, 08) }});
+            // Act
+            var reports = _flightSimulatorService.GetReports();
+            // Assert
+            reports.Should().NotBeEmpty();
+            reports.Should().HaveCount(2);
+            reports.First().CalculType.Should().Be(CalculType.CalculateDistance);
+            reports.Last().CalculType.Should().Be(CalculType.CalculateFuelConsumption);
         }
     }
 }

@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using System.Diagnostics;
+using System.Linq;
 using TUI.SimulatorFlights.Domain;
 using TUI_SimulatorFlightCosts.Application;
 using TUI_SimulatorFlightCosts.Web.Adapters;
@@ -46,11 +47,20 @@ namespace TUI_SimulatorFlightCosts.Web.Controllers
             return View();
         }
 
+        public IActionResult CalculDistance(string flightName)
+        {
+            return View("Index");
+        }
+
+        public IActionResult CalculConsumptionFuel(string flightName)
+        {
+            return View("Index");
+        }
+
         public IActionResult Report()
         {
-            ViewData["Message"] = "Your application description page.";
-
-            return View();
+            var reports = _flightSimulatorService.GetReports()?.Select(x => x.ToReportModel());
+            return View(reports);
         }
 
        
