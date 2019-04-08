@@ -1,4 +1,5 @@
-﻿using TUI.Domain.SimulatorFlights;
+﻿using System.Collections.Generic;
+using TUI.Domain.SimulatorFlights;
 
 namespace TUI.SimulatorFlights.Domain
 {
@@ -7,5 +8,6 @@ namespace TUI.SimulatorFlights.Domain
         void RegisterFlight(IFlight flight);
 
         IFlight GetFlight(string flightName);
+        ICollection<IFlight> GetFlights();
     }
 }

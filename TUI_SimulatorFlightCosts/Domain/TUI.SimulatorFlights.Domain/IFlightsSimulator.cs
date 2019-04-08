@@ -1,4 +1,5 @@
-﻿using TUI.Domain.SimulatorFlights;
+﻿using System.Collections.Generic;
+using TUI.Domain.SimulatorFlights;
 
 namespace TUI.SimulatorFlights.Domain
 {
@@ -6,5 +7,6 @@ namespace TUI.SimulatorFlights.Domain
     {
         double CalculateDistance(string flightName);
         double CalculateFuelConsumption(string flightName);
+        ICollection<Report> GetReports();
     }
 }
