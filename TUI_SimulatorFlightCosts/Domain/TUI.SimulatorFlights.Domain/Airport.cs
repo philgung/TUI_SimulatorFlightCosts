@@ -2,12 +2,12 @@
 {
     public class Airport
     {
-        private string airportName;
         public GPSPosition GPSPosition { get; }
+        public string AirportName { get; }
 
         public Airport(string airportName, GPSPosition gPSPosition)
         {
-            this.airportName = airportName;
+            this.AirportName = airportName;
             this.GPSPosition = gPSPosition;
         }
     }
