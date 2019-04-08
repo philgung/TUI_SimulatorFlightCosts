@@ -14,6 +14,6 @@ function CalculConsumptionFuel(flightName) {
     $.ajax({
         type: "Get",
         url: "/Home/CalculConsumptionFuel?flightName=" + flightName,
-        contentType: "application/json; charset=utf-8",
+        contentType: "application/json; charset=utf-8"
     });
 }

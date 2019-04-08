@@ -15,7 +15,9 @@ namespace TUI.Domain.SimulatorFlights
         public double CalculateDistance(string flightName)
         {
             var flight = GetFlight(flightName);
-            return flight.CalculateDistance();
+            var distanceTraveled = flight.CalculateDistance();
+            _persistenceService.SaveReport(flightName, CalculType.CalculateDistance, distanceTraveled);
+            return distanceTraveled;
         }
 
         public double CalculateFuelConsumption(string flightName)
