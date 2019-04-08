@@ -10,7 +10,7 @@ namespace TUI.SimulatorFlights.Infrastructure
         {
             return new Report
             {
-                FlightName = reportDTO.FlightName,
+                FlightName = reportDTO.Flight_name,
                 CalculType = Enum.Parse<CalculType>(reportDTO.CalculType),
                 Result = reportDTO.Result,
                 CalculDate = DateTime.Parse(reportDTO.CalculDate)

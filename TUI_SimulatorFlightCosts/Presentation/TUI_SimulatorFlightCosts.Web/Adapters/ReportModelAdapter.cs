@@ -10,7 +10,7 @@ namespace TUI_SimulatorFlightCosts.Web.Adapters
             return new ReportModel
             {
                 FlightName = report.FlightName,
-                CalculType = report.CalculType.ToString(),
+                CalculType = report.CalculType == CalculType.CalculateDistance ? "Distance Traveled" : "Consumption Fuel",
                 CalculDate = report.CalculDate.ToShortDateString(),
                 Result = report.CalculType == CalculType.CalculateDistance ? $"{report.Result.ToString("0.00000")} km" : $"{report.Result.ToString("0.00000")} L"
             };
