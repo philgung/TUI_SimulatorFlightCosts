@@ -3,49 +3,41 @@
 }
 @model UI_SimulatorFlightCosts.Web.Models.HomeModel
 
+<div>
+    <h2>Flights TUI</h2>
     <br /><br />
     <a asp-action="Edit">Create flight</a>
     <br />
-    
-
-    <div>
-        <h2>Flights TUI</h2>
+    @if (Model.Flights != null && Model.Flights.Any())
+    {
         <table style="padding:5px; border-spacing:5px; border-collapse:separate;">
             <thead>
                 <tr>
                     <th>Flight Name</th>
                     <th>Fuel/km</th>
-                    <th>Takeoff Fuel</th>
-                    <th>Departure</th>
-                    <th>Latitude</th>
-                    <th>Longitude</th>
-                    <th>Destination</th>
-                    <th>Latitude</th>
-                    <th>Longitude</th>
+                    <th>Takeoff fuel</th>
+                    <th>Airport Departure</th>                    
+                    <th>Airport Destination</th>                    
                     <th>Edit</th>
                     <th>Calcul</th>
                 </tr>
             </thead>
             @foreach (var flight in Model.Flights)
             {
-            <tr>
-                <td>@flight.Name</td>
-                <td>@flight.FuelConsumptionPerDistance</td>
-                <td>@flight.FuelConsumptionTakeoffEffort</td>
-                <td>@flight.DepartureAirport.AirportName</td>
-                <td>@flight.DepartureAirport.GPSPosition.Latitude.ToString("0.00000")</td>
-                <td>@flight.DepartureAirport.GPSPosition.Longitude.ToString("0.00000")</td>
-                <td>@flight.DestinationAirport.AirportName</td>
-                <td>@flight.DestinationAirport.GPSPosition.Latitude.ToString("0.00000")</td>
-                <td>@flight.DestinationAirport.GPSPosition.Longitude.ToString("0.00000")</td>
-                <td>@Html.ActionLink("Edit", "Edit", "Home", new { flightName = flight.Name })</td>
-                <td>
+                <tr>
+                    <td>@flight.Name</td>
+                    <td>@flight.FuelConsumptionPerDistance</td>
+                    <td>@flight.FuelConsumptionTakeoffEffort</td>
+                    <td>@flight.DepartureAirport.AirportName (@flight.DepartureAirport.GetLatitude().ToString("0.00"), @flight.DepartureAirport.GetLongitude().ToString("0.00"))</td>
+                    <td>@flight.DestinationAirport.AirportName (@flight.DestinationAirport.GetLatitude().ToString("0.00"),@flight.DestinationAirport.GetLongitude().ToString("0.00"))</td>
+                    <td>@Html.ActionLink("Edit", "Edit", "Home", new { flightName = flight.Name })</td>
+                    <td>
 
-                    <input type="button" value="Distance" class="btn btn-default" onclick="CalculDistance('@flight.Name')" />                    
-                    <input type="button" value="Fuel" class="btn btn-default" onclick="CalculConsumptionFuel('@flight.Name')" />
-                </td>
-            </tr>
+                        <input type="button" value="Distance" class="btn btn-default" onclick="CalculDistance('@flight.Name')" />
+                        <input type="button" value="Fuel" class="btn btn-default" onclick="CalculConsumptionFuel('@flight.Name')" />
+                    </td>
+                </tr>
             }
         </table>
-
-    </div>
+    }
+</div>

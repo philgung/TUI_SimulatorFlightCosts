@@ -23,11 +23,11 @@ namespace TUI_SimulatorFlightCosts.Web.Adapters
                 FuelConsumptionPerDistance = flight.FuelConsumptionPerDistance,
                 FuelConsumptionTakeoffEffort = flight.FuelConsumptionTakeoffEffort,
                 DepartureAirportName = flight.DepartureAirport.AirportName,
-                DepartureAiportLatitude = flight.DepartureAirport.GPSPosition.Latitude,
-                DepartureAirportLongitude = flight.DepartureAirport.GPSPosition.Longitude,
+                DepartureAiportLatitude = flight.DepartureAirport.GetLatitude(),
+                DepartureAirportLongitude = flight.DepartureAirport.GetLongitude(),
                 DestinationAirportName = flight.DestinationAirport.AirportName,
-                DestinationAirportLatitude = flight.DestinationAirport.GPSPosition.Latitude,
-                DestinationAirportLongitude = flight.DestinationAirport.GPSPosition.Longitude
+                DestinationAirportLatitude = flight.DestinationAirport.GetLatitude(),
+                DestinationAirportLongitude = flight.DestinationAirport.GetLongitude()
             };
         }
     }

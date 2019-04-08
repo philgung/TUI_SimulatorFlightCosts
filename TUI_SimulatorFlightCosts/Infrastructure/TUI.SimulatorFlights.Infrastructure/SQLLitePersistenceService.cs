@@ -35,10 +35,10 @@ namespace TUI.SimulatorFlights.Infrastructure
                 command.CommandText = "INSERT INTO flight (flight_name,fuel_consumption_per_distance,fuel_consumption_takeoff_effort," +
                     "departure_airport_name, departure_airport_latitude, departure_airport_longitude," +
                     "destination_airport_name, destination_airport_latitude, destination_airport_longitude" +
-                   $") VALUES ('{flight.Name}', {flight.FuelConsumptionPerDistance}, {flight.FuelConsumptionTakeoffEffort},'{flight.DepartureAirport.AirportName}',{flight.DepartureAirport.GPSPosition.Latitude}, {flight.DepartureAirport.GPSPosition.Longitude}, '{flight.DestinationAirport.AirportName}', {flight.DestinationAirport.GPSPosition.Latitude}, {flight.DestinationAirport.GPSPosition.Longitude})" +
+                   $") VALUES ('{flight.Name}', {flight.FuelConsumptionPerDistance}, {flight.FuelConsumptionTakeoffEffort},'{flight.DepartureAirport.AirportName}',{flight.DepartureAirport.GetLatitude()}, {flight.DepartureAirport.GetLongitude()}, '{flight.DestinationAirport.AirportName}', {flight.DestinationAirport.GetLatitude()}, {flight.DestinationAirport.GetLongitude()})" +
                    $"ON CONFLICT(flight_name) DO UPDATE SET fuel_consumption_per_distance = {flight.FuelConsumptionPerDistance},fuel_consumption_takeoff_effort={flight.FuelConsumptionTakeoffEffort}," +
-                    $"departure_airport_name='{flight.DepartureAirport.AirportName}',departure_airport_latitude={flight.DepartureAirport.GPSPosition.Latitude}, departure_airport_longitude={flight.DepartureAirport.GPSPosition.Longitude}," +
-                    $"destination_airport_name='{flight.DestinationAirport.AirportName}',destination_airport_latitude={flight.DepartureAirport.GPSPosition.Latitude}, destination_airport_longitude={flight.DestinationAirport.GPSPosition.Longitude};";
+                    $"departure_airport_name='{flight.DepartureAirport.AirportName}',departure_airport_latitude={flight.DepartureAirport.GetLatitude()}, departure_airport_longitude={flight.DepartureAirport.GetLongitude()}," +
+                    $"destination_airport_name='{flight.DestinationAirport.AirportName}',destination_airport_latitude={flight.DepartureAirport.GetLatitude()}, destination_airport_longitude={flight.DestinationAirport.GetLongitude()};";
                 command.ExecuteNonQuery();
             }
         }
