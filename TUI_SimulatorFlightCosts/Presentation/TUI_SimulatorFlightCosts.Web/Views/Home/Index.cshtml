@@ -14,8 +14,8 @@
             <thead>
                 <tr>
                     <th>Flight Name</th>
-                    <th>Fuel / km</th>
-                    <th>Fuel at takeoff</th>
+                    <th>Fuel/km</th>
+                    <th>Takeoff Fuel</th>
                     <th>Departure</th>
                     <th>Latitude</th>
                     <th>Longitude</th>
@@ -40,9 +40,9 @@
                 <td>@flight.DestinationAirport.GPSPosition.Longitude.ToString("0.00000")</td>
                 <td>@Html.ActionLink("Edit", "Edit", "Home", new { flightName = flight.Name })</td>
                 <td>
-                    @Html.ActionLink("Distance", "CalculDistance", "Home", new { flightName = flight.Name })
+                    <button type="button" onclick="CalculDistance('@flight.Name')">Distance</button>
                     <br />
-                    @Html.ActionLink("Fuel", "CalculConsumptionFuel", "Home", new { flightName = flight.Name })
+                    <button type="button" onclick="CalculConsumptionFuel('@flight.Name')">Fuel</button>
                 </td>
             </tr>
             }

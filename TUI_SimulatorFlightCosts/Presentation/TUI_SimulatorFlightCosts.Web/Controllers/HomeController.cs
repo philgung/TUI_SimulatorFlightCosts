@@ -47,14 +47,16 @@ namespace TUI_SimulatorFlightCosts.Web.Controllers
             return View();
         }
 
-        public IActionResult CalculDistance(string flightName)
+        public JsonResult CalculDistance(string flightName)
         {
-            return View("Index");
+            var distance = _flightSimulatorService.CalculateDistance(flightName);
+            return Json(distance);
         }
 
-        public IActionResult CalculConsumptionFuel(string flightName)
+        public JsonResult CalculConsumptionFuel(string flightName)
         {
-            return View("Index");
+            var consumptionFuel = _flightSimulatorService.CalculateFuelConsumption(flightName);
+            return Json(consumptionFuel);
         }
 
         public IActionResult Report()

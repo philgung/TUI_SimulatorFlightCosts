@@ -1,4 +1,5 @@
-﻿using TUI.SimulatorFlights.Domain;
+﻿using System.Collections.Generic;
+using TUI.SimulatorFlights.Domain;
 
 namespace TUI.Domain.SimulatorFlights
 {
@@ -34,6 +35,16 @@ namespace TUI.Domain.SimulatorFlights
         public void RegisterFlight(IFlight flight)
         {
             _persistenceService.SaveFlight(flight);            
+        }
+
+        public ICollection<Report> GetReports()
+        {
+            return _persistenceService.GetReports();
+        }
+
+        public ICollection<IFlight> GetFlights()
+        {
+            return _persistenceService.GetFlights();
         }
     }
 }
