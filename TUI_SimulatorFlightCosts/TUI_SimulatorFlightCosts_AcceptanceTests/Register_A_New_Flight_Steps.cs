@@ -1,5 +1,4 @@
 ﻿using FluentAssertions;
-using System;
 using TechTalk.SpecFlow;
 using TUI.Domain.SimulatorFlights;
 using TUI.SimulatorFlights.Infrastructure;
@@ -9,7 +8,13 @@ namespace TUI_SimulatorFlightCosts_AcceptanceTests
     [Binding]
     public class Register_A_New_FlightSteps
     {
-        private ControlTower _currentControlTower = new ControlTower(new SQLLitePersistenceService());
+        private ControlTower _currentControlTower;
+        public Register_A_New_FlightSteps()
+        {
+            var persistenceService = new SQLLitePersistenceService();
+            persistenceService.InitializeService(@"Data Source=..\..\..\..\Sqlite\TUI.SimulatorFlights.sqlite;Version=3;");
+            _currentControlTower = new ControlTower(persistenceService);
+        }
 
         [When(@"A user enters a new flight called '(.*)' on system")]
         public void WhenAUserEntersANewFlightCalledOnSystem(string flightName)

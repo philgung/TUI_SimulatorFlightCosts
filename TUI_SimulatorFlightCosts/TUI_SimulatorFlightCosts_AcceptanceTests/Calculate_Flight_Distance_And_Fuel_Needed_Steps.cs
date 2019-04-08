@@ -1,5 +1,4 @@
 ﻿using FluentAssertions;
-using System;
 using TechTalk.SpecFlow;
 using TUI.Domain.SimulatorFlights;
 using TUI.SimulatorFlights.Infrastructure;
@@ -9,9 +8,17 @@ namespace TUI_SimulatorFlightCosts_AcceptanceTests
     [Binding]
     public class Calculate_Flight_Distance_And_Fuel_NeededSteps
     {
-        private Flight _currentFlight = new Flight("currentFlight");
-        private ControlTower _currentControlTower = new ControlTower(new SQLLitePersistenceService());
+        private Flight _currentFlight;
+        private ControlTower _currentControlTower;
         private double _distanceKm, _fuelConsumption;
+
+        public Calculate_Flight_Distance_And_Fuel_NeededSteps()
+        {
+            var persistenceService = new SQLLitePersistenceService();
+            persistenceService.InitializeService(@"Data Source=..\..\..\..\Sqlite\TUI.SimulatorFlights.sqlite;Version=3;");
+            _currentControlTower = new ControlTower(persistenceService);
+            _currentFlight = new Flight("currentFlight");
+        }
 
 
         [Given(@"A flight which has a departure airport with GPS Position \((.*) - (.*), (.*)\)")]

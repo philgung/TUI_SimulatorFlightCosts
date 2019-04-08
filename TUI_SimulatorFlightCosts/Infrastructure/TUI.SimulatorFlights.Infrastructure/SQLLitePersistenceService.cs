@@ -11,8 +11,7 @@ namespace TUI.SimulatorFlights.Infrastructure
 {
     public class SQLLitePersistenceService : IPersistenceService
     {
-        private string _connectionString = @"Data Source=..\..\..\..\Sqlite\TUI.SimulatorFlights.sqlite;Version=3;";
-
+        private string _connectionString;
         
         public IFlight GetFlight(string flightName)
         {
