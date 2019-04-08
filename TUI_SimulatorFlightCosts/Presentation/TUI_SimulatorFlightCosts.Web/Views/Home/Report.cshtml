@@ -13,7 +13,7 @@
             <th>Flight Name</th>
             <th>Type</th>
             <th>Resultat</th>
-            <th>Date</th>            
+            <th>Date</th>
         </tr>
     </thead>
     @foreach (var report in Model)
@@ -23,8 +23,12 @@
             <td>@report.CalculType</td>
             <td>@report.Result</td>
             <td>@report.CalculDate</td>
-            
+
         </tr>
     }
 </table>
 
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>

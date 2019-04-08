@@ -4,7 +4,7 @@
 @model UI_SimulatorFlightCosts.Web.Models.HomeModel
 
     <br /><br />
-    @Html.ActionLink("Create flight", "Edit", "Home")
+    <a asp-action="Edit">Create flight</a>
     <br />
     
 
@@ -40,9 +40,9 @@
                 <td>@flight.DestinationAirport.GPSPosition.Longitude.ToString("0.00000")</td>
                 <td>@Html.ActionLink("Edit", "Edit", "Home", new { flightName = flight.Name })</td>
                 <td>
-                    <button type="button" onclick="CalculDistance('@flight.Name')">Distance</button>
-                    <br />
-                    <button type="button" onclick="CalculConsumptionFuel('@flight.Name')">Fuel</button>
+
+                    <input type="button" value="Distance" class="btn btn-default" onclick="CalculDistance('@flight.Name')" />                    
+                    <input type="button" value="Fuel" class="btn btn-default" onclick="CalculConsumptionFuel('@flight.Name')" />
                 </td>
             </tr>
             }
